@@ -2196,10 +2196,6 @@ context_boot_go(struct boot_loader_state *state, struct boot_rsp *rsp)
      * of this call.
      */
     rc = boot_open_all_flash_areas(state);
-    if (rc != 0) {
-        BOOT_LOG_ERR("Failed to open flash areas, cannot continue");
-        FIH_PANIC;
-    }
 
     /* Iterate over all the images. By the end of the loop the swap type has
      * to be determined for each image and all aborted swaps have to be
